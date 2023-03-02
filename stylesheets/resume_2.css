@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Raleway:wght@300;400;500;600&family=Open+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --bg-text: #ffc704;
+  --bg-dark: #262729;
+  --bg-gray: #ebebeb;
+}
+body {
+  background-color: #000;
+}
+.main {
+  height: 1127px;
+  padding: 15px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: white;
+  aspect-ratio: 210/297;
+}
+.left {
+  background-color: var(--bg-gray);
+  height: 100%;
+  width: 38%;
+  color: white;
+}
+.left .topLeft {
+  background-color: var(--bg-dark);
+  display: flex;
+  flex-direction: column;
+}
+.left .userImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0 0;
+}
+.left .userImg img {
+  width: 200px;
+  aspect-ratio: 1;
+  border-radius: 100%;
+}
+.occupation {
+  padding: 8px 0;
+  background-color: var(--bg-text);
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  width: 240px;
+  text-align: center;
+  margin: auto;
+  color: var(--bg-dark);
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+.left .parent,
+.left .contact {
+  width: 240px;
+  margin: auto;
+  font-family: "Raleway", sans-serif;
+}
+.parent h2 {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  margin-top: 0.83rem;
+}
+.parent .line {
+  height: 2px;
+  background-color: var(--bg-text);
+  width: 40px;
+  margin: 20px 0;
+}
+.left .institute {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #c2c2c2;
+  margin-bottom: 40px;
+  font-size: 0.95rem;
+  line-height: 20px;
+}
+.left .institute .insName {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: white;
+}
+.left .resMarks {
+  display: flex;
+  justify-content: space-between;
+}
+.bottomLeft .parent {
+  color: rgb(34, 34, 34);
+}
+.bottomLeft .parent h2 {
+  font-weight: 500;
+}
+.skillListResume {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill {
+  background-color: var(--bg-text);
+  padding: 4px 8px;
+  margin: 4px 8px 4px 0;
+}
+.left .bottomLeft .contact {
+  margin-top: 30px;
+  display: flex;
+  color: #262729;
+}
+.contact i {
+  color: #262729;
+  background-color: var(--bg-text);
+  padding: 15px 10px;
+}
+
+.left .contact .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 6px 10px 16px;
+}
+
+.contact .icons {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.left .contact .heading {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.left .contact .detail {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+.right {
+  background-color: rgb(255, 255, 255);
+  width: 62%;
+}
+.right .profile {
+  padding: 40px;
+  background-color: var(--bg-gray);
+  display: flex;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif;
+}
+.right .profile .name {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.right .occupation {
+  margin: 10px 0 30px;
+  width: fit-content;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+.right .profile h2 {
+  font-weight: 500;
+}
+.right .profile .about {
+  font-weight: 300;
+}
+.portfolio {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.1rem;
+}
+.portfolio .parent {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio .parent .compName {
+  margin: 10px 0 0;
+}
+.project {
+  color: #262729;
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+}
+.project:hover {
+  text-decoration: underline;
+}

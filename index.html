@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResuMaker</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
+    <script
+      src="https://kit.fontawesome.com/dffffa55e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- ----------------------------------- RESUMAKER FORM---------------------------------------- -->
+    <div class="container">
+      <h1 class="header"><span>Resu</span><span>Maker</span></h1>
+      <div class="content" id="content">
+        <div class="personalInfo">
+          <div class="infoHeader">
+            <div class="hr"></div>
+            <span class="info"> Personal Information</span>
+            <div class="hr"></div>
+          </div>
+          <div class="inputs">
+            <input
+              type="text"
+              name="fname"
+              id="fname"
+              placeholder="First Name"
+            />
+            <input
+              type="text"
+              name="lname"
+              id="lname"
+              placeholder="Last Name"
+            />
+            <input type="text" name="age" id="age" placeholder="Age" />
+            <textarea name="about" id="about" cols="10" rows="5"></textarea>
+          </div>
+          <div class="img">
+            <span>Upload Your Image Here</span>
+            <div class="imgPlace">
+              <input type="file" name="userImg" id="userImg" class="userImg" />
+              <img
+                src="content/blank_profile.png"
+                alt="Profile Image"
+                class="userImgPlace"
+                id="img"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="eduInfo">
+          <div class="infoHeader">
+            <div class="hr"></div>
+            <span class="info">Education</span>
+            <div class="hr"></div>
+          </div>
+          <div class="stages">
+            <div class="inputs">
+              <input
+                type="text"
+                placeholder="School Name"
+                name="school"
+                id="school"
+              />
+              <div class="marks">
+                <div class="marksChild">
+                  <input
+                    type="number"
+                    name="xMarks"
+                    id="xMarks"
+                    placeholder="Class X"
+                  />%
+                </div>
+                <div class="marksChild">
+                  <input
+                    type="number"
+                    name="xiiMarks"
+                    id="xiiMarks"
+                    placeholder="Class XII"
+                  />%
+                </div>
+              </div>
+              <input
+                type="text"
+                name="yocSchool"
+                placeholder="Year of Completion"
+                id="yocSchool"
+              />
+            </div>
+            <div class="inputs">
+              <input
+                type="text"
+                placeholder="College Name"
+                name="college"
+                id="college"
+              />
+              <input
+                type="text"
+                name="course"
+                id="course"
+                placeholder="Course Pursued"
+              />
+              <input
+                type="text"
+                name="yocCollege"
+                placeholder="Year of Completion"
+                id="yocCollege"
+              />
+            </div>
+          </div>
+          <div class="flexRow">
+            <div class="skills">
+              <div class="skillsHeader">
+                <span>Skills</span>
+                <div class="hr"></div>
+              </div>
+              <div class="skillContent">
+                <div class="vr"></div>
+                <div class="skillsList" id="skillContent">
+                  <input
+                    type="text"
+                    placeholder="Your skill"
+                    class="skillSet"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your skill"
+                    class="skillSet"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your skill"
+                    class="skillSet"
+                  />
+                </div>
+                <span class="add" id="addSkill">+</span>
+              </div>
+            </div>
+            <div class="intern">
+              <div class="internHeader">
+                <div class="hr"></div>
+                <span>Intern</span>
+              </div>
+              <div class="internContent">
+                <div class="skillsList" id="internContent">
+                  <input
+                    type="text"
+                    placeholder="Your Intern"
+                    class="internSet"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your Intern"
+                    class="internSet"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Your Intern"
+                    class="internSet"
+                  />
+                </div>
+                <span class="add" id="addIntern">+</span>
+                <div class="vr"></div>
+              </div>
+            </div>
+          </div>
+          <div class="infoHeader projectsHeader">
+            <div class="hr"></div>
+            <span class="info">Projects</span>
+            <div class="hr"></div>
+          </div>
+          <div class="projectContent" id="projectContent">
+            <span class="add" id="addProject">+</span>
+            <input
+              type="text"
+              name="project"
+              class="projectSet"
+              placeholder="Project Link"
+            />
+            <input
+              type="text"
+              name="project"
+              class="projectSet"
+              placeholder="Project Link"
+            />
+            <input
+              type="text"
+              name="project"
+              class="projectSet"
+              placeholder="Project Link"
+            />
+          </div>
+        </div>
+      </div>
+      <button class="submitBtn" id="previewBtn">Show Preview</button>
+    </div>
+    <!-- ----------------------------------- RESUME DESIGN---------------------------------------- -->
+    <div class="spinner" id="spinner"><div class="loader">Loading...</div></div>
+    <div class="resumeParent">
+      <div class="sidebar">
+        <h1>Select your design</h1>
+        <div class="imgContainer">
+          <img src="content/design-1.jpeg" alt="" class="design" />
+          <img src="content/design-2.jpg" alt="" class="design" />
+          <img src="content/design-3.jpeg" alt="" class="design" />
+          <img src="content/design-4.jpeg" alt="" class="design" />
+          <img src="content/design-5.jpeg" alt="" class="design" />
+          <img src="content/design-6.jpeg" alt="" class="design" />
+        </div>
+      </div>
+      <div class="resumeMain"></div>
+      <div id="close"><i class="fa-solid fa-xmark close fa-2xl"></i></div>
+      <button class="submitBtn" id="submitBtn">
+        <i class="fa-solid fa-download fa-xl"></i>
+      </button>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"
+      integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
+<!-- <div class="resume">
+      <div id="close"><i class="fa-solid fa-xmark close fa-2xl"></i></div>
+      <div class="main" id="resume">
+        <div class="left">
+          <div class="userImg">
+            <img
+              src="blank-profile-picture-g5a2f0778c_1280.png"
+              alt=""
+              id="resImg"
+            />
+          </div>
+
+          <div class="parent">
+            <h2>Profile</h2>
+            <div class="profAbout" id="resAbout">
+              Business Administration student. I consider myself a responsible
+              and orderly person.
+            </div>
+          </div>
+          <div class="hr"></div>
+          <div class="parent">
+            <h2>Skills</h2>
+            <div class="skillListResume" id="resSkills">
+              <span class="skill">Web Development</span>
+              <span class="skill">HTML</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">CSS</span>
+            </div>
+          </div>
+          <div class="hr"></div>
+
+          <div class="parent">
+            <h2>Projects</h2>
+
+            <div id="resProjects">
+            </div>
+          </div>
+          <div class="hr"></div>
+
+          <div class="parent">
+            <h2>Contact me</h2>
+            <div class="contact">
+              <i class="fa-solid fa-phone"></i>(123) 456-7890
+            </div>
+            <div class="contact">
+              <i class="fa-regular fa-envelope"></i>hello@resumaker.com
+            </div>
+            <div class="contact">
+              <i class="fa-solid fa-location-dot"></i>New Delhi
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <div class="basicInfo">
+            <h1 class="name" id="resName">Saksham gambhir</h1>
+            <span class="occupation">Student</span>
+          </div>
+          <div class="mainInfo">
+            <div class="parent">
+              <h2>Education</h2>
+              <div class="institute">
+                <span class="name" id="resCollege"
+                  >> Delhi Technological University</span
+                >
+                <span class="course" id="resCourse"
+                  >B.Tech in Electronics and Communication Engineering</span
+                >
+                <span class="yoc"
+                  >Year of Completion:
+                  <span id="resYocCollege">2025</span></span
+                >
+              </div>
+              <div class="institute">
+                <span class="name" id="resSchool"
+                  >> Army Public School No. 2, Roorkee</span
+                >
+                <div class="eduMarks">
+                  <span>Class X : <span id="resXmarks">96.4</span>%</span>
+                  <span>Class XII : <span id="resXIImarks">95.6</span>%</span>
+                </div>
+                <span class="yoc"
+                  >Year of Completion: <span id="resYocSchool">2021</span></span
+                >
+              </div>
+            </div>
+            <div class="hr"></div>
+            <div class="parent">
+              <h2>Languages</h2>
+              <div class="lang">
+                <span class="langName">English</span>
+                <span class="langDesc">Native or Bilingual Proficiency</span>
+              </div>
+              <div class="lang">
+                <span class="langName">Hindi</span>
+                <span class="langDesc">Native or Bilingual Proficiency</span>
+              </div>
+            </div>
+            <div class="hr"></div>
+            <div class="parent">
+              <h2>Volunteer experience</h2>
+              <div class="company" id="resCompany">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="submitBtn" id="submitBtn">Download Resume</button>
+    </div> -->
